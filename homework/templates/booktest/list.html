@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表</title>
+
+</head>
+<body>
+   <h1>列表 页面</h1>
+<h3>书籍名称</h3>
+
+<ul>
+    {% for book in booklist %}
+    <li><a href="{% url 'booktest:detail' book.id %}">{{ book.title }}</a>
+        <a href="{% url 'booktest:deletebook' book.id  %}">删除</a></li>
+    {% endfor %}
+</ul>
+   <a href="{% url 'booktest:addbook' %}">添加</a>
+
+</body>
+</html>
